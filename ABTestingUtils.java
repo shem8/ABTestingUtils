@@ -4,21 +4,8 @@ import android.content.SharedPreferences;
 
 public class ABTestingUtils {
 
-    private interface ABTestingEnum {
+    protected interface ABTestingEnum {
 		double getValue();
-	}
-
-    private static ABTestingUtils instance;
-
-    private ABTestingUtils() {
-		super();
-	}
-	
-	public static ABTestingUtils getInstance() {
-		if (instance == null) {
-			instance = new ABTestingUtils();
-		}
-		return instance;
 	}
 
     protected  <T extends Enum<T> & ABTestingEnum> T getABTestingType(SharedPreferences sharedPref, Class<T> type, String key) {
